@@ -1,0 +1,49 @@
+<!--<p class="shift-down" style="color: white" xmlns="http://www.w3.org/1999/html">-->
+  <!--{{blogPosts | json}}-->
+<!--</p>-->
+
+<div class="container-fluid col-md-5 col-md-offset-3 shift-down">
+  <div class="row" *ngFor="let post of blogPosts">
+    <div class="card" *ngIf="!showForm(post.id); else formBlock">
+      <div  class="card-header">
+        <a [routerLink]="'/blog/'+post.blog" class="custom-link">{{post.blog}}</a> <button  class="btn btn-sm col-md-offset-10"   (click)="editPost(post.id)" *ngIf="showEditButton(post.id)"><i class="fa fa-pencil"></i></button>
+        <a [routerLink]="'/blog/'+post.blog+'/'+post.id"><small><i>{{post.date.toLocaleString()}}</i></small></a>
+      </div>
+      <div class="card-block">
+        <h4 class="card-title">{{post.title}}</h4>
+        <div class="card-text" [innerHtml]="post.content"></div>
+        <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
+      </div>
+    </div>
+
+    <ng-template #formBlock>
+      <div class="card" >
+        <form [formGroup]="blogPostEditForm" class="form-post" >
+          <div class="card-header">
+            {{post.blog}}
+          </div>
+          <div class="card-block">
+            <div class="form-group ">
+              <div class="input-group col-md-12">
+                <input [value]="post.title" formControlName="title" class="form-control input-lg" type="text" placeholder="Enter Title here ..." style="font-size: 15px; "/>
+              </div>
+            </div>
+
+            <div class="form-group ">
+              <div class="input-group col-md-12">
+                <textarea  class="form-post-textarea" [froalaEditor]="options"  formControlName="content" style="font-size: 15px">{{post.content}}</textarea>
+              </div>
+            </div>
+
+            <div class="text-center btn-group-lg">
+              <button class="btn btn-primary btn-block " (click)="savePost($event)">Save</button>
+              <button class="btn btn-primary btn-block " (click)="cancelEditPost($event)">Cancel</button>
+
+            </div>
+            <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
+          </div>
+        </form>
+      </div>
+    </ng-template>
+  </div>
+</div>

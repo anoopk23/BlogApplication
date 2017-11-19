@@ -1,0 +1,23 @@
+.categories-tabs {
+  border: 2px solid white;
+}
+
+.card-extra {
+  border-radius:5px;
+  padding: 0px;
+  margin: 20px 0px;
+  align-items: center;
+  background-color: white !important;
+
+}
+
+.card-footer-extra {
+  height: 50px;
+  padding: 10px 0px ;
+  margin: 0px  20px;
+  background-color: white;
+}
+
+/*card-white {*/
+  /**/
+/*}*/

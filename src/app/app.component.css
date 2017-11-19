@@ -1,0 +1,22 @@
+
+
+.nav.navbar-nav.navbar-right li a {
+  color: white;
+}
+
+.nav.navbar-nav.navbar-right li a:hover,
+.nav.navbar-nav.navbar-right li a:focus,
+.nav.navbar-nav.navbar-right li a:after,
+.navbar-default .navbar-nav .dropdown .dropdown-toggle:focus,
+.navbar-default .navbar-nav .dropdown .dropdown-toggle:hover
+.navbar-default .navbar-nav .dropdown .dropdown-toggle > a:after
+{
+  color: white !important;
+  background-color:  #2a4459 !important;
+}
+
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover{
+  background-color: #2a4459;
+}
+
+.navbar-nav > li > .dropdown-menu { background-color: #21334f; }

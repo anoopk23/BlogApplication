@@ -1,0 +1,33 @@
+.form-post-container {
+  margin-top: 100px;
+  background-color: #ededed;
+  border-radius: 10px !important;
+  margin-bottom: 100px;
+
+}
+
+.form-post {
+  margin: 20px 20px;
+  /*text-align: center;*/
+}
+
+.form-post-heading {
+  margin: 30px 0;
+  /*border: 2px solid red;*/
+  text-align: center;
+  font-weight: bolder;
+}
+
+
+.form-post input, .form-post-textarea {
+  border-radius: 3px;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15), 0 1px 1px 0 rgba(0, 0, 0, 0.15) !important;
+
+}
+
+.drop-shadow {
+  /*border: 1px solid rgba(0, 0, 0, 0.19);*/
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25), 0 6px 20px 0 rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25), 0 6px 20px 0 rgba(0, 0, 0, 0.15) !important;
+}
+

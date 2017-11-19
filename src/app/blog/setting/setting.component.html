@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <div class="bd-example bd-example-tabs shift-down" >
+    <div class="row  shift-down">
+
+      <div class="col-md-6 col-md-offset-2 custom-pane">
+        <div class="custom-pane-content">
+          <div class="custom-pane-title">
+            <h3>Account</h3>
+          </div>
+
+          <div class="custom-form">
+            <form [formGroup]="settingForm">
+              <div class="form-group" *ngFor="let i of indices">
+                <label [for]="labels[i]" class="col-sm-3 control-label">{{labels[i]}}</label>
+                <div [id]="labels[i]" class="col-sm-9">
+                  <input type="text" [formControlName]="labels[i]" [id]="labels[i]" [value]="properties[i]" class="form-control"  name="concept"/>
+                  <!--<p>{{properties[i]}}</p>-->
+
+                </div>
+              </div>
+              <button (click)="onSaveClicked($event)" class="btn btn-primary col-md-2">Save</button>
+            </form>
+
+
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+</div>

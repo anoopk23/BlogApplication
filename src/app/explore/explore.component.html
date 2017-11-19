@@ -1,0 +1,70 @@
+<!--<div class="container-fluid">-->
+  <div class="bd-example bd-example-tabs shift-down" >
+    <div class="row  shift-down">
+      <div class="col-md-2">
+        <div class="nav flex-column nav-pills categories-tabs" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          <a class="nav-link"  id="v-pills-all-tab" data-toggle="pill" href="#v-pills-all" role="tab" aria-controls="v-pills-all" aria-selected="false" >All</a>
+
+
+          <a *ngFor="let c of categories" class="nav-link" [id]="'v-pills-'+c+'-tab'" data-toggle="pill" [href]="'#v-pills-'+c" role="tab" [attr.aria-controls]="'v-pills-'+c" aria-selected="false">{{c}}</a>
+
+        </div>
+      </div>
+      <div class="col-md-6 col-md-offset-2">
+        <div class="tab-content" id="v-pills-tabContent">
+          <div class="tab-pane fade" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab">
+            <div *ngFor="let blog of blogs">
+              {{blog | json}}
+            </div>
+          </div>
+          <div *ngFor="let c of categories" class="tab-pane fade" [id]="'v-pills-'+c" role="tabpanel" [attr.aria-labelledby]="'v-pills-'+c+'-tab'">
+            <div *ngFor="let blog of categoryWiseBlogs[c]">
+              <div class="card-block drop-shadow shift-down row card-extra">
+                <div class="card-header" style="height: 50px;">
+                  <small style="margin-left: 10px ">
+                    <b>
+                      {{blog.name}}
+                    </b>
+                    <button class="btn btn-primary btn-sm  col-md-offset-9" ><i class="fa fa-plus"> </i> Follow</button>
+                  </small>
+                </div>
+                <div style="margin:10px 30px">
+
+                  <div class="" style="height: 40px;">
+                    <h4 class="card-title" >
+
+                      {{blog.title}}
+                    </h4>
+                  </div>
+                  <p class="card-text " style="white-space: pre-line;" >About goes here!!!{{blog.about}}</p>
+                </div>
+
+                <div class="card-footer container-fluid card-footer-extra">
+                  <div class="col-md-2">
+                    <small>Followers: {{blog.followers.length}}</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!--</div>-->
+            <!--<div class="tab-pane fade" id="v-pills-music" role="tabpanel" aria-labelledby="v-pills-music-tab">-->
+              <!--<p>{{categoryWiseBlogs['Music'] | json}}</p>-->
+            <!--</div>-->
+            <!--<div class="tab-pane fade" id="v-pills-celebrity" role="tabpanel" aria-labelledby="v-pills-celebrity-tab">-->
+              <!--<p>{{categoryWiseBlogs['Celebrity'] | json}}</p>-->
+
+            <!--</div>-->
+            <!--<div class="tab-pane fade" id="v-pills-tv" role="tabpanel" aria-labelledby="v-pills-tv-tab">-->
+              <!--<p>{{categoryWiseBlogs['TV'] | json}}</p>-->
+            <!--</div>-->
+            <!--<div class="tab-pane fade" id="v-pills-fun" role="tabpanel" aria-labelledby="v-pills-fun-tab">-->
+              <!--<p>{{categoryWiseBlogs['Fun'] | json}}</p>-->
+
+            <!--</div>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--</div>-->

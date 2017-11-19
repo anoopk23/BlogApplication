@@ -1,0 +1,96 @@
+
+<!--<div class="card" *ngFor="let i of x">-->
+  <!--<h3 class="card-header primary-color white-text">Featured {{i}}</h3>-->
+  <!--<div class="card-body">-->
+    <!--<h4 class="card-title">Special title treatment</h4>-->
+    <!--<p class="card-text">With supporting text below as a natural sna lead-in to additional content.</p>-->
+    <!--<a class="btn btn-primary">Go somewhere</a>-->
+  <!--</div>-->
+<!--</div>-->
+
+<!--<div class="shift-down">-->
+  <!--{{postsToShow | json }}-->
+<!--</div>-->
+<div class="shift-down">
+  <div class="row" *ngFor="let post of postsToShow">
+    <div  class="shift-down" >
+      <div  class="col-md-1 col-md-offset-3" style="margin-right: 0px; width: 120px !important; margin-left: 25%; padding: 0; ">
+        <img class="img-rounded"  style="float: right; border-radius: 10px;margin: 0px; padding: 0 !important; width: 75px; height: 75px; background-color: white "  src="assets/images/user.png"  alt="no image">
+      </div>
+
+      <div class="container-fluid col-md-5 " >
+        <div class="card-block drop-shadow " style="border-radius:10px; padding: 0px; margin: 0px; align-items: center; background-color: white">
+
+          <div class="card-header" style="height: 50px;">
+            <small style="display: block; margin-left: 10px">
+              <b>
+                {{post.blog}}
+              </b>
+              <a style="margin-left: 10px">Follow</a>
+            </small>
+          </div>
+          <div style="margin:10px 10px">
+
+            <div class="" style="height: 40px; margin: 40px  20px;">
+              <h4 class="card-title" >
+
+                {{post.title}}
+              </h4>
+            </div>
+            <div class="card-text " style="margin-left: 20px; " [innerHtml]="post.content"></div>
+          </div>
+
+          <div class="card-footer container-fluid" style="height: 30px;padding: 3px 0px ; margin: 0px  20px; background-color: white; ">
+            <div class="col-md-2">
+              <small><a href="#"   class="fa fa-heart">  <b> Like </b></a></small>
+            </div>
+            <div class=" col-md-1 col-md-offset-9" style="padding: 4px 0px; color: #1f7e9a; ">
+              <small >
+                <p><i class="fa fa-thumbs-up"></i> {{post.likes}}</p>
+              </small>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--All posts ended! at last show the categories and the related blogs to follow-->
+
+  <div class="row">
+    <div  class="shift-down">
+      <div  class="col-md-1 col-md-offset-3" style="margin-right: 0px; width: 120px !important; margin-left: 25%; padding: 0; ">
+        <img class="img-rounded"  style="float: right; border-radius: 10px;margin: 0px; padding: 0 !important; width: 75px; height: 75px; background-color: white "  src="assets/images/user.png"  alt="no image">
+      </div>
+
+      <div class="container-fluid col-md-5 " >
+        <div class="card-block drop-shadow " style="border-radius:10px; padding: 0px; margin: 0px; align-items: center; background-color: white">
+
+          <div class="card-header" style="height: 50px;">
+
+            <b style="margin-left: 10px">
+              Do you want to see more posts?
+            </b>
+            <!--<a style="margin-left: 10px">Follow</a>-->
+
+          </div>
+
+          <div style="margin:10px 10px">
+
+            <div class="" style="height: 40px; margin: 0px  20px;">
+              <p class="card-title" >
+                The more blogs you follow, the more posts you will see in the dashboard. Explore <a routerLink="/explore">now</a>!
+              </p>
+            </div>
+            <p class="card-text " style="white-space: pre-line; margin-left: 20px " >
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
