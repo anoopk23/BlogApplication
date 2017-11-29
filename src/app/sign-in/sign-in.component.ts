@@ -102,7 +102,7 @@ export class SignInComponent implements OnInit{
       this.blogService.sendSignedInBlog(this.blog);
 
       this.router.navigateByUrl('dashboard');
-      window.location.reload();
+      // window.location.reload();
     }
     else {
       this.userNotFound = true;
