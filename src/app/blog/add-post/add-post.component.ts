@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {Blog} from "../../blog";
-import {BlogService} from "../../blog.service";
-import {ActivatedRoute, Router} from "@angular/router";
-import {FormBuilder, FormGroup} from "@angular/forms";
-import {Post} from "../../post";
-import * as globals from '../../app.globals'
+import {Blog} from '../../blog';
+import {BlogService} from '../../blog.service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {FormBuilder, FormGroup} from '@angular/forms';
+import {Post} from '../../post';
+import * as globals from '../../app.globals';
 
 @Component({
   selector: 'app-add-post',
@@ -34,7 +34,7 @@ export class AddPostComponent implements OnInit {
       placeholderText: 'Edit your content here ...',
       htmlAllowedStyleProps: ['font-family', 'font-size', 'background', 'color',
         'width', 'text-align', 'vertical-align', 'background-color'],
-      imageUploadURL: 'http://localhost:3000/image_upload',
+      imageUploadURL: globals.SERVER_URL + '/image_upload',
       toolbarButtons: ['fullscreen', 'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', '|',
         'fontFamily', 'fontSize', 'color', 'inlineStyle', 'paragraphStyle', '|',
         'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent',
@@ -56,7 +56,7 @@ export class AddPostComponent implements OnInit {
         },
         'froalaEditor.image.uploaded': function (e, editor, resp) {
 
-          console.log("response:" + resp.toString());
+          console.log('response:' + resp.toString());
         },
         'froalaEditor.image.error': function (e, editor, error, response) {
           console.log(response);
